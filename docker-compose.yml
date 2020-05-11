@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: "postgres"
+    restart: "always"
+    image: postgres
+    env_file:
+      - postgres.env
+    volumes:
+      #- postgres_volume:/var/lib/postgresql/data/
+      #- ./tmp/postgres/:/docker-entrypoint-initdb.d/
+      - ./tmp/postgres:/tmp
+    ports:
+      - 5432:5432
+  metabase:
+    container_name: "metabase"
+    restart: "always"
+    image: metabase/metabase
+    volumes:
+      - ./tmp/oura-data:/metabase-data
+    env_file:
+      - metabase_database.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    links:
+      - postgres
+
+# Volumes to persist data
+volumes:
+  postgres_volume:
