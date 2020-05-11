@@ -8,8 +8,8 @@ services:
     env_file:
       - postgres.env
     volumes:
-      #- postgres_volume:/var/lib/postgresql/data/
-      #- ./tmp/postgres/:/docker-entrypoint-initdb.d/
+      - ./tmp/postgres/data/datapostgres_volume:/var/lib/postgresql/data/
+      - ./tmp/postgres/:/docker-entrypoint-initdb.d/
       - ./tmp/postgres:/tmp
     ports:
       - 5432:5432

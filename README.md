@@ -11,7 +11,7 @@ Requirements for this combo
 Steps
 1. Install Docker & Docker-compose
 2. Download Oura data. From the download "choose all" columns
-3. Move the downloaded csv to this folder, "oura_metabase", and rename it to "oura_org.csv"
+3. Move the downloaded csv to this folder, "oura-metabase", and rename it to "oura_org.csv"
 4. Run "docker-compose up -d && sh install.sh && docker-compose exec postgres psql -U postgres -d postgres -a -f /tmp/commands.sql"
 7. Navigate to http://localhost:3000/ and wait for Metabase to be ready
 8. Create user 
