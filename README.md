@@ -10,7 +10,7 @@ Metabase is open source BI-tool that connects to multiple databases and you can 
 
 ## Running Metabase locally
 1. Install [Docker](https://docs.docker.com/get-docker/) & [docker-compose](https://docs.docker.com/compose/install/)
-2. Download Oura data [here](https://cloud.ouraring.com/trends). From the download "choose all" columns
+2. Download Oura data [here](https://cloud.ouraring.com/trends). Click **Download data** and "Select all" columns
 3. Move the downloaded csv file to the root folder, and rename it to "oura_org.csv"
 4. Run ```docker-compose up -d && sh install.sh && docker-compose exec postgres psql -U postgres -d postgres -a -f /tmp/commands.sql```
 7. Navigate to http://localhost:3000/ and wait for Metabase to be ready
